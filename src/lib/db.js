@@ -1,8 +1,21 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./users.db');
+import mongoose from "mongoose";
 
-db.serialize(() => {
-  db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, email TEXT)");
-});
+export const dbConnect = () => {
+  if (mongoose.connection.readyState === 1) {
+    console.log("DB connection is already established");
+    return;
+  }
 
-module.exports = db;
+  if (!process.env.DATABASE_URL) {
+    throw new Error("DATABASE URI is not defined");
+  }
+
+  const connectionString = process.env.DATABASE_URL.replace('<password>', process.env.DATABASE_PASSWORD);
+
+  mongoose
+    .connect(connectionString)
+    .then(() => console.log("DB connected successfully"))
+    .catch((error) => {
+      console.log("DB connection failed + " + error);
+    });
+};

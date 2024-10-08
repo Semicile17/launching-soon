@@ -1,40 +1,55 @@
-import { promisify } from "util";
-import db from "../../../lib/db";
-
-// Promisify the db.run method
-const runQuery = promisify(db.run).bind(db);
-const getQuery = promisify(db.get).bind(db); // Promisifying db.get for fetching a single row
+import { dbConnect } from '../../../lib/db'; 
+import Email from '../../../lib/models/emails'; 
 
 export async function POST(request) {
-  const { email } = await request.json(); // Accessing the body of the request
+  const { email } = await request.json();
+
+  if (!email) {
+    return new Response(
+      JSON.stringify({ message: "Email is required" }), 
+      {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+  }
+
+  // Connect to MongoDB
+  await dbConnect();
 
   try {
-    // Check if the email already exists
-    const checkEmail = await getQuery("SELECT email FROM users WHERE email = ?", [email]);
-
-    if (checkEmail) {
+    // Check if email already exists in the database
+    const existingUser = await Email.findOne({ email });
+    if (existingUser) {
       return new Response(
         JSON.stringify({ message: "You have already registered" }),
-        { status: 409, headers: { "Content-Type": "application/json" } } // Conflict status
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" }
+        }
       );
     }
 
-    // Insert the email into the users table
-    const id = await runQuery("INSERT INTO users (email) VALUES (?)", [email]);
+    // Create a new email record
+    const newEmail = await Email.create({ email });
 
-    return new Response(JSON.stringify({ message: "Email saved", id }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // Return success response
+    return new Response(
+      JSON.stringify({ message: "Email successfully registered", email: newEmail }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   } catch (error) {
-    console.error(error); // Log the error for debugging
-    return new Response(JSON.stringify({ message: "Error saving email" }), {
-      status: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    console.error("Error registering email:", error); // Log the error for debugging
+    // Handle any errors during the process
+    return new Response(
+      JSON.stringify({ message: "Error registering email", error: error.message }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   }
 }
