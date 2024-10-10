@@ -9,8 +9,10 @@ export const dbConnect = () => {
   if (!process.env.DATABASE_URL) {
     throw new Error("DATABASE URI is not defined");
   }
+  
 
   const connectionString = process.env.DATABASE_URL.replace('<password>', process.env.DATABASE_PASSWORD);
+  console.log(connectionString)
 
   mongoose
     .connect(connectionString)
