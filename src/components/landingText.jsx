@@ -27,7 +27,7 @@ export default function Landingtext() {
         <h1 className="font-mono text-white text-4xl ml-2 gradient-text fade-in-text-small">CHANGE</h1>
       </span>
       <br/>
-      <hr className="gradient md:w-[50%]"></hr>
+      <hr className="gradient md:w-[400px]"></hr>
       <br/>
       <span className={`${theme === 'light'?'text-black':'text-white'} fade-in-text-small`}>
         Want to know more 
