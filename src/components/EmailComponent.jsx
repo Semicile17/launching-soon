@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { MdSend } from "react-icons/md";
-import { useTheme } from "@/contexts/themeContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function EmailComponent() {
   const { theme } = useTheme();

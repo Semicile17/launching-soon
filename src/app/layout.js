@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/themeContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 export const metadata = {
   title: "BlackTree",

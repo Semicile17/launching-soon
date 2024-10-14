@@ -1,5 +1,5 @@
-import { useTheme } from "@/contexts/themeContext"
-import ThemeToggle from "./themeToggle"
+import { useTheme } from "@/contexts/ThemeContext"
+import ThemeToggle from "@/components/ThemeToggle"
 
 export default function Header(){
 

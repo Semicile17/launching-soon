@@ -1,4 +1,4 @@
-import { useTheme } from "@/contexts/themeContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Landingtext() {
   const {theme} = useTheme()

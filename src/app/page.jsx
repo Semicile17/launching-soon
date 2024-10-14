@@ -1,8 +1,8 @@
 "use client";
-import { useTheme } from "@/contexts/themeContext";
-import Header from "@/components/header";
-import EmailComponent from "@/components/emailComponent";
-import Landingtext from "@/components/landingText";
+import { useTheme } from "@/contexts/ThemeContext";
+import Header from "@/components/Header";
+import EmailComponent from "@/components/EmailComponent";
+import Landingtext from "@/components/LandingText";
 export default function Home() {
   const { theme } = useTheme();
   return (
