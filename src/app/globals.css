@@ -2,3 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  height:100%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gradient-text {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #7BE574,#dbd81a, #3dc933, #0F8807,#5eff5e, #74af30 , #daa023);
+    background-size: 200% 200%; /* to create the animation effect */
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradientAnimation 4s ease-in-out infinite;
+  
+    /* Text shadow with green shades */
+    text-shadow: 
+      2px 2px 4px rgba(0, 255, 0, 0.6),  
+
+
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  hr.gradient {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,#000000,#759233,#ff7e5f, #ff7e5f, #feb47b, #86a8e7, #91eae4,#feb47b, #86a8e7, #000000);
+  }
+
+
+/* Box styling  */
+/* .gradient-border {
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #5fce3d, #29ff00, #8ae73e, #1c9722) 1;
+} */
+
+
+/* Body Gradient  */
+.body-gradient-dark{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #0c0b0b, #2c2a2a, #110f0e, #4c574e, #1a181f, #110c10);
+  background-size: 400% 400%; /* This allows for a large gradient area that can move */
+  animation: gradientMove 20s ease infinite; /* Slow diagonal movement */
+}
+
+.body-gradient-light{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #ccc8c8, #89d493, #fafafa, #ccddd1, #eae8ec, #d6ebce);
+  background-size: 400% 400%; /* This allows for a large gradient area that can move */
+  animation: gradientMove 20s ease infinite; /* Slow diagonal movement */
+}
+
+/* text-animation */
+.fade-in-text-large {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.fade-in-text-small {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
