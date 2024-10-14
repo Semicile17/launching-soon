@@ -6,7 +6,7 @@
 
 
 .gradient-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     background: linear-gradient(90deg, #7BE574,#dbd81a, #3dc933, #0F8807,#5eff5e, #74af30 , #daa023);
     background-size: 200% 200%; /* to create the animation effect */

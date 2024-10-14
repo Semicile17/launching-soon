@@ -15,18 +15,18 @@ export default function Landingtext() {
 
         <h1
           className="
-        text-white font-mono font-bold text-4xl 
-        gradient-text ml-5 
+        text-white font-mono font-bold text-4xl
+        gradient-text ml-5  
         "
         >
           LAUNCHING SOON !
         </h1>
       </span>
       <br />
-      <span className="flex">
+      <span className="flex h-full items-center">
         <h1
           className={`${theme === "light" ? "text-black" : "text-white"}
-         font-mono md:text-xl fade-in-text-small
+         font-mono md:text-xl fade-in-text-small text-sm
         `}
         >
           and ready to make a

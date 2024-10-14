@@ -9,7 +9,7 @@ export default function Home() {
     <div
       className={`flex ${
         theme === "light" ? "bg-white body-gradient-light" : "bg-[#060505] body-gradient-dark"
-      } w-full pattern h-screen flex flex-col md:justify-center`}
+      } w-full pattern h-screen flex flex-col md:justify-center overflow-hidden`}
     >
       <Header />
       <main className="w-full h-fit p-6 mt-20 md:ml-32">
