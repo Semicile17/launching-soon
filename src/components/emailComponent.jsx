@@ -64,7 +64,7 @@ export default function EmailComponent() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`w-64 p-1 h-3/4 focus:outline:none ${
+                className={`w-full p-1 h-full focus:outline-none ${
                   theme === "light" ? "bg-green-400" : "bg-white"
                 } ${
                   theme === "light"
