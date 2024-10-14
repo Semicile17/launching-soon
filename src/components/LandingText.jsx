@@ -45,7 +45,7 @@ export default function Landingtext() {
       >
         Want to know more
         <span className="ml-1 font-serif">about us</span>
-        ?
+         ?
         <br />
         <br />
         Drop your mail below

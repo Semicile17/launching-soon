@@ -53,7 +53,7 @@ export default function EmailComponent() {
             } shadow-lg shadow-green-600 transition-all duration-500 gradient-border`}
           >
             <div
-              className={`ml-2 mt-2 w-64 h-10 md:h-11 z-10 md:w-80 flex justify-start hover:ml-1 hover:mt-1 items-center ${
+              className={`ml-2 mt-2 w-64 h-10 md:h-11 z-10 md:w-80 flex justify-start hover:ml-0 hover:mt-0 items-center ${
                 theme === "light" ? "bg-green-400" : "bg-white"
               } border border-black transition-all duration-500`}
             >
