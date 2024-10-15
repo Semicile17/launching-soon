@@ -32,7 +32,7 @@ export default function Home() {
           } w-full pattern h-screen flex flex-col md:justify-center overflow-hidden`}
         >
           <Header />
-          <main className="w-full md:flex  items-center justify-evenly h-fit p-6 mt-20 md:ml-32 gap-x-24">
+          <main className="w-full md:flex  items-center justify-evenly h-fit p-6 mt-32 md:mt-20 md:ml-32 gap-x-24">
             <section>
               <Landingtext />
               <EmailComponent />

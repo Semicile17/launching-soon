@@ -11,6 +11,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 2rem;
+  font-family: monospace;
   z-index: 9999;
   opacity: 1;
   transition: opacity 1s ease-in-out;
