@@ -4,7 +4,7 @@ export default function Landingtext() {
   const { theme } = useTheme();
   return (
     <div>
-      <span className="flex fade-in-text-large">
+      <span className="flex fade-in-text-large ">
         <h1
           className={`${
             theme === "light" ? "text-black" : "text-white"

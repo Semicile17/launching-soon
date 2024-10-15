@@ -75,7 +75,7 @@ export default function EmailComponent() {
             </div>
           </div>
           {loading ? (
-            <ClipLoader  className="mt-2 ml-8"/>
+            <ClipLoader size={20} color="white" className="mt-2 ml-8"/>
           ) : (
             <button onClick={handleSubmit} className="ml-10">
               <MdSend

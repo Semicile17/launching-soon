@@ -1,6 +1,6 @@
 import { useTheme } from "@/contexts/ThemeContext"
 import ThemeToggle from "@/components/ThemeToggle"
-import logo from "@/assets/logo.svg"
+
 
 export default function Header(){
 

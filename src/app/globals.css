@@ -8,7 +8,7 @@
 .gradient-text {
     font-size: 2.5rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #7BE574,#dbd81a, #3dc933, #0F8807,#5eff5e, #74af30 , #daa023);
+    background: linear-gradient(90deg, #7BE574,#215a0b, #3dc933, #0F8807,#5eff5e, #74af30 , #13b120);
     background-size: 200% 200%; /* to create the animation effect */
     color: transparent;
     background-clip: text;
@@ -21,6 +21,14 @@
 
 
   }
+
+  hr.gradient {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,#dad6d6,#759233,#18ad38, #21a021, #0f750c, #94e285, #26b177,#3c743f, #00ff9d, #b4ceba);
+    animation: gradientAnimation 4s ease-in-out infinite;
+  
+  }
   
   @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
@@ -28,11 +36,7 @@
     100% { background-position: 0% 50%; }
   }
 
-  hr.gradient {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right,#000000,#759233,#ff7e5f, #ff7e5f, #feb47b, #86a8e7, #91eae4,#feb47b, #86a8e7, #000000);
-  }
+
 
 
 /* Box styling  */
