@@ -11,11 +11,11 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('dark');
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.body.className = savedTheme; // Apply the theme to the body
-  }, []);
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem('theme') || 'light';
+  //   setTheme(savedTheme);
+  //   document.body.className = savedTheme; // Apply the theme to the body
+  // }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
